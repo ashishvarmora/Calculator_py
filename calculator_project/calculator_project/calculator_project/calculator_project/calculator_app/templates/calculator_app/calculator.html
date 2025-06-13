@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h1>Simple Django Calculator</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" step="any" name="num1" placeholder="First number" required>
+        <input type="number" step="any" name="num2" placeholder="Second number" required>
+        <br><br>
+        <button name="operation" value="add">Add</button>
+        <button name="operation" value="subtract">Subtract</button>
+        <button name="operation" value="multiply">Multiply</button>
+        <button name="operation" value="divide">Divide</button>
+    </form>
+
+    {% if result is not None %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
